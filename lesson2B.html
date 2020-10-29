@@ -18,9 +18,9 @@
 
                 //Regular function:
                 // OLD way - create problems or bugs
-                //changeColor = function() {
+                changeColor = function() {
                 // NEW - arrow function
-                changeColor = () => {
+                //changeColor = () => {
                     document.getElementById("demo").innerHTML += this.color;
                 }
             }
@@ -28,7 +28,9 @@
             myheader = new Header();
 
             //The window object calls the function:
-            window.addEventListener("load", myheader.changeColor);
+            // DEMO - using bind to overcome the context loss issue
+            window.addEventListener(
+                "load", myheader.changeColor.bind(myheader));
 
             //A button object calls the function:
             document.getElementById("btn").addEventListener(
