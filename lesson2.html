@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Hello lesson 2</title>
+    </head>
+    <body>
+        <h1>Lesson 2 - ES6 classes</h1>
+        <script>
+            // for DEMO only
+            console.log("Hello Lesson 2");
+
+            // class - BLUEPRINT
+            class Hero{
+                constructor(n){
+                    this.name = n;
+                }
+                shout(){
+                    console.log( "My NAME is "+this.name);
+                }
+            }
+            // sub class inherit Hero
+            // SuperHero is-a Hero
+            class SuperHero extends Hero{
+                // add new properties
+                constructor(n, p){
+                    // call constructor in Hero
+                    super(n);
+                    // add new property power
+                    this.power = p;
+                }
+                // add new behaviour or method
+                fight(){
+                    console.log(this.name + " fight with power " + this.power);
+                }
+            }
+            // create this object
+            h = new Hero("powerpuff");
+            // call method shout
+            h.shout();
+
+            // create SuperHero, give 2 parameters
+            h2 = new SuperHero("clark kent", 99);
+            // superhero can also shout
+            h2.shout();
+            // call superhero method fight
+            h2.fight();
+        </script>
+    </body>
+</html>

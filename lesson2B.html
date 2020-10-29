@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Hello lesson 2B</title>
+    </head>
+    <body>
+        <h1>Lesson 2 - ES6 classes - this</h1>
+        <div id="demo">some text to change here</div>
+        <button id="btn">Some button to press</button>
+        <script>
+            // for DEMO only
+            console.log("this demo");
+
+            // demo from PPT
+            class Header {
+                constructor() {
+                    this.color = "Red";
+                }
+
+                //Regular function:
+                // OLD way - create problems or bugs
+                //changeColor = function() {
+                // NEW - arrow function
+                changeColor = () => {
+                    document.getElementById("demo").innerHTML += this.color;
+                }
+            }
+
+            myheader = new Header();
+
+            //The window object calls the function:
+            window.addEventListener("load", myheader.changeColor);
+
+            //A button object calls the function:
+            document.getElementById("btn").addEventListener(
+                "click", myheader.changeColor);
+
+            // DEMO - let / var
+            for(var i = 0; i<10; i++){
+                console.log(i);
+            }
+            console.log("value of i is " + i);
+
+            for(let k = 0; k<10; k++){
+                console.log(k);
+            }
+            console.log("value of k is " + k);
+
+        </script>
+    </body>
+</html>
