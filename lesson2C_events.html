@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Event listener</title>
+    </head>
+    <body>
+        <h1>Demo on events</h1>
+        <input type="text" value="Hello 1B07" id="teletubbies" />
+        <div id="result">This is a text</div>
+        <!-- put a button -->
+        <button onclick="firstWay()">Button 1</button>
+        <button id="bananaInPyjamas">Button 2</button>
+        <button id="barney">Button 3</button>
+        <script>
+            console.log("events demo started");
+
+            // 1st way to write listener
+            // just use a standard JS function
+            function firstWay(){
+                console.log("button 1 clicked");
+            }
+            // 2nd way of writing listener. 
+            function secondWay(){
+                console.log("button 2 clicked");
+                //firstWay(); // you can call other functions
+                // or run other code
+            }
+            // register listener to the event
+            // CAREFUL. don't add ()
+            document.getElementById("bananaInPyjamas").onclick = 
+                                                        secondWay;
+            // 3rd way of writing listener
+            function thirdWay(){
+                console.log("button 3 clicked");
+                //firstWay(); // you can call other functions
+                // or run other code
+            }
+            document.getElementById("barney").addEventListener(
+                "click", // what event to listen to
+                thirdWay // what function to run for event
+            );
+            // add more listener to the same button
+            // document.getElementById("barney").addEventListener(
+            //     "click", // what event to listen to
+            //     firstWay // what function to run for event
+            // );
+            function doSomething(){
+                let ben10 = Math.random(); // 0 to 0.999999....
+                // get the text inside textfield, teletubbies
+                let tubbies = 
+                    document.getElementById("teletubbies").value;
+                document.getElementById("result").innerHTML = 
+                    tubbies +": " + ben10;
+            }
+            document.getElementById("barney").addEventListener(
+                "click", // what event to listen to
+                doSomething // what function to run for event
+            );
+        </script>
+    </body>
+</html>
