@@ -30,7 +30,8 @@ const st = StyleSheet.create(
       padding: 16
     },
     background: {
-      backgroundColor: "red"
+      //backgroundColor: "red"
+      backgroundColor: "#036"
     }
   }
 );
