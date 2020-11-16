@@ -26,7 +26,8 @@ class App extends Component{
   // sample event handler for button
   buttonPress = () => {
     this.setState({
-      energy: -500
+      //energy: -500
+      energy: this.state.energy -100
     });
   }
 
