@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan calculator</title>
+</head>
+
+<body>
+
+    <h1>Enter Loan Information:</h1>
+    <form>
+        <span class="form">
+            <label for="One" class="form">1) Amount of the loan (Principal): </label>
+            <input name="One" type="text " id="One" value="100000"><br>
+        </span>
+        <span class="form">
+            <label for="Two" class="form">2) Annual percentage rate of interest (in percentage): </label>
+            <input name="Two" type="text" id="Two" value="5"><br>
+        </span>
+        <span class="form">
+            <label for="Three" class="form">3) Repayment period of years: </label>
+            <input name="Three" type="text" id="Three" value="3"><br>
+        </span> <br><br>
+        <span id="btn" class ="form"><button type="button" value="Compute" onclick="conversion()">Compute</button></span>
+    </form>
+    <h1>Payment Information:</h1>
+    <form>
+        <span class="form">
+            <label for="Four" class="form">4) Monthly repayment will be: </label>
+            <input name="Four" type="text" id="Four"><br>
+        </span>
+        <span class="form">
+            <label for="Five" class="form">5) Total payment will be: </label>
+            <input name="Five" type="text" id="Five"><br>
+        </span>
+        <span class="form">
+            <label for="Six" class="form">6) Total interest payments will be: </label>
+            <input name="Six" type="text" id="Six"><br>
+        </span>
+    </form>
+
+
+</body>
+<script src="loanCalculator.js"></script>
+
+
+</html>
