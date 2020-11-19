@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    
+</head>
+
+<body>
+    <h1>My Simple Calculator</h1>
+    <form id="Form">
+        <label for="fNumber">Number1 </label>
+        <input type="text" id="fNumber" value="30"><br>
+
+        <label for="sNumber">Number2 </label>
+        <input type="text" id="sNumber" value="20"><br>
+
+    </form>
+    <form id = "things">
+    <input type="submit" value="Addition" onclick="Calculate('plus')">
+    <input type="submit" value="Substraction" onclick="Calculate('minus')"><br>
+    <input type="submit" value="Multiplication" onclick="Calculate('multiply')">
+    <input type="submit" value="Divisions" onclick="Calculate('divide')">
+</form>
+<script>
+// arrow function
+// Addition = () =>{
+//     // get the value from user input
+//     // MUST convert to number for calculation
+//     var num1 = parseFloat( document.getElementById("fNumber").value);
+//     var num2 = parseFloat( document.getElementById("sNumber").value);
+//     alert(num1 + num2);
+// }
+// you can create the other functions. 
+// METHOD 2 . just use one function
+Calculate = (operation) =>{
+    // get the value from user input
+    // MUST convert to number for calculation
+    var num1 = parseFloat( document.getElementById("fNumber").value);
+    var num2 = parseFloat( document.getElementById("sNumber").value);
+    var result = 0;
+    // depends on operation, calculate result
+    switch(operation){
+        case 'plus':
+            result = num1 + num2;
+            break;
+        case 'minus':
+            result = num1 - num2;
+            break;
+        case 'multiply':
+            result = num1 * num2;
+            break;
+        case 'divide':
+            result = num1 / num2;
+            break;
+    }
+    alert(result);
+}
+</script>
+</body>
+</html>
