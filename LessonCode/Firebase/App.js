@@ -22,7 +22,7 @@ const FirebaseApp = () =>{
     }
     // sample function to read Firebase data
     const fetchData = () => {
-        fetch('https://mapp2019-6d4f1.firebaseio.com/products.json')
+        fetch('https://your_firebase_database_url/products.json')
           .then((response) => response.json())
           .then((json) => {
             setData(json); // store into state
@@ -68,7 +68,7 @@ const FirebaseApp = () =>{
     // sample function to add data
     const addData = (name, price) =>{
         console.log("adding data");
-        fetch('https://mapp2019-6d4f1.firebaseio.com/products.json', {
+        fetch('https://your_firebase_database_url/products.json', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
