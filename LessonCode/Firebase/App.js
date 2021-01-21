@@ -14,6 +14,7 @@ const FirebaseApp = () =>{
     const [loading, setLoading] = useState(true);
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+    const [result, setResult] = useState("");
 
     // listener for button
     const buttonPress = ()=>{
@@ -27,6 +28,7 @@ const FirebaseApp = () =>{
             setData(json); // store into state
             // call the function below to convert to array
             setDataArray( processData(json));
+            displayResult();
             console.log(data);
             console.log(dataArray);
           })
@@ -55,7 +57,7 @@ const FirebaseApp = () =>{
             result += dataArray[i].name + ": " + 
                 dataArray[i].price +"\n";
         }
-        return result;
+        setResult(result);
     }
 
     // load data when component mounted
@@ -97,13 +99,14 @@ const FirebaseApp = () =>{
         addData(name, Number(price));
     }
     return (
-        <View>
+        <View style={{flex:1}}>
             <Text style={{fontSize:32}}>Hello firebase</Text>
             <Button title="Load Data" onPress={buttonPress} />
-            <ScrollView><Text style={{fontSize:32}}>{displayResult()}</Text></ScrollView>
             <TextInput placeholder="Name" onChangeText={nameChange} value={name}/>
             <TextInput placeholder="Price" onChangeText={priceChange} value={price} />
             <Button title="Add Product" onPress={addProduct} />
+            <ScrollView><Text style={{fontSize:32}}>{result}</Text></ScrollView>
+            
         </View>
     );
 }
